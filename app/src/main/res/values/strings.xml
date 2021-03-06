@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ContactList</string>
+    <string name="id">Id</string>
+    <string name="adresse">Adresse</string>
+    <string name="nachname">Nachname</string>
+    <string name="vorname">Vorname</string>
+    <string name="telefonnummer">Telefonnummer</string>
+    <string name="date">Datum</string>
+    <string name="dateformat">YYYY-MM-DD</string>
+    <string name="tisch">Tischnummer</string>
+    <string name="add">Eintragen</string>
+    <string name="log">Show Log</string>
+    <string name="einverst">Einverständniserklärung zur Erhebung personenbezogener Daten</string>
+    <string name="login">Login</string>
+    <string name="admin">Admin</string>
+    <string name="karte">Karte</string>
+    <string name="link">orange.coffee/getraenkekarte/drinks</string>
+    <string name="qr">Qr Code</string>
+
+
+</resources>
