@@ -95,8 +95,13 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Bitte füllen Sie alle Felder aus", Toast.LENGTH_LONG).show();
                             return;
                         }
-
-                        Boolean isInserted = myDb.visitLogin(editId.getText().toString(),editNachname.getText().toString(),editTisch.getText().toString());
+                        Boolean isInserted =false;
+                        if(myDb.searchId(editId.getText().toString()).equals("0")) {
+                            isInserted = false;
+                        }
+                        if(myDb.searchId(editId.getText().toString()).equals("1")) {
+                            isInserted = myDb.visitLogin(editId.getText().toString(), editNachname.getText().toString(), editTisch.getText().toString());
+                        }
 
                         if(!isInserted) {
                             Toast.makeText(LoginActivity.this, "Id oder Nachname falsch", Toast.LENGTH_LONG).show();

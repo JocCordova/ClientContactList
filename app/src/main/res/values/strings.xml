@@ -10,6 +10,7 @@
     <string name="tisch">Tischnummer</string>
     <string name="add">Eintragen</string>
     <string name="log">Show Log</string>
+    <string name="delete">Delete Older Records</string>
     <string name="einverst">Einverständniserklärung zur Erhebung personenbezogener Daten</string>
     <string name="login">Login</string>
     <string name="admin">Admin</string>
