@@ -34,6 +34,7 @@ The App is separated in three activities, Main, Login and Admin.
 The Login activity can be accessed through the three dots.
 
 The Admin activity is accessed through the gear, to access here a password is needed the password (`Admin01`) is hard coded at the moment. 
+Older Logs (Older than 30 days) can be also deleted on the Admin activity.
 
 
 |  Main ||  Login || Admin  | 
