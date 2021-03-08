@@ -2,6 +2,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![ScreenShot](https://raw.github.com/JocCordova/ClientContactList/master/screenshots/ClientContactList_icon.jpg)
+
+
+
+### Built With
+
+* [](Android Studio)
+* [](SQLite)
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
