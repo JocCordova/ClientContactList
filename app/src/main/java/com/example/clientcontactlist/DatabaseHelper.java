@@ -137,9 +137,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("SELECT ID FROM GUEST ORDER BY ID DESC LIMIT 1", null);
         res.moveToFirst();
         return res.getString(0);
-
     }
 
+    public String deleteOldRecords() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.rawQuery("DELETE FROM VISIT WHERE ID IN (SELECT v.ID FROM GUEST g INNER JOIN VISIT v ON g.ID = v.GuestID WHERE v.datum < datetime('now','-30 days'))", null).moveToFirst();
+        Cursor res = db.rawQuery("SELECT COUNT(ID) FROM GUEST WHERE ID NOT IN (SELECT v.ID FROM GUEST g INNER JOIN VISIT v ON g.ID = v.GuestID)", null);
+        res.moveToFirst();
+        db.rawQuery("DELETE FROM GUEST WHERE ID NOT IN (SELECT g.ID FROM GUEST g INNER JOIN VISIT v ON g.ID = v.GuestID)", null).moveToFirst();
+        return res.getString(0);
+    }
 
-
+    public String searchId(String id) {
+        String args[] = {id};
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT Count(ID) FROM GUEST WHERE ID = ?", args);
+        res.moveToFirst();
+        return res.getString(0);
+    }
 }

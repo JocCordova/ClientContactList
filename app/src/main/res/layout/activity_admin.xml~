@@ -7,27 +7,15 @@
     tools:context=".AdminActivity">
 
     <Button
-        android:id="@+id/button_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/delete"
-        app:layout_constraintBottom_toTopOf="@+id/bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_log" />
-
-    <Button
         android:id="@+id/button_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/right"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@id/left"
-        app:layout_constraintTop_toTopOf="@id/top"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top"
+        app:layout_constraintVertical_bias="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/right"
@@ -61,10 +49,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="260dp"
-        android:layout_marginLeft="25dp"
         android:text="@string/id"
         app:layout_constraintBottom_toBottomOf="@id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@id/left"
         app:layout_constraintTop_toTopOf="@id/top"
@@ -88,10 +76,10 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="25dp"
         android:text="@string/date"
         app:layout_constraintBottom_toBottomOf="@id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@id/left"
         app:layout_constraintTop_toTopOf="@id/top"
@@ -102,26 +90,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="date"
         android:focusable="false"
+        android:hint="Date"
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="@id/bottom"
         app:layout_constraintEnd_toEndOf="@id/right"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@id/top"
-        app:layout_constraintVertical_bias="0.155"
-        android:hint="Date"
-        />
+        app:layout_constraintVertical_bias="0.155" />
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="205dp"
-        android:layout_marginLeft="25dp"
         android:text="@string/nachname"
         app:layout_constraintBottom_toBottomOf="@id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@id/left"
         app:layout_constraintTop_toTopOf="@id/top"
@@ -136,7 +123,7 @@
         android:inputType="textPersonName|textCapWords"
         app:layout_constraintBottom_toBottomOf="@id/bottom"
         app:layout_constraintEnd_toEndOf="@id/right"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@id/top"
         app:layout_constraintVertical_bias="0.455" />

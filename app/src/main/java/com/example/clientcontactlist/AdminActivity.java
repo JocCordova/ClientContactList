@@ -1,6 +1,7 @@
 package com.example.clientcontactlist;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -18,7 +20,7 @@ import java.util.Calendar;
 public class AdminActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editDate, editNachname, editId;
-    Button btnShowLog;
+    Button btnShowLog,btnDeleteRecords;
     DatePickerDialog picker;
 
 
@@ -34,9 +36,10 @@ public class AdminActivity extends AppCompatActivity {
         editNachname = findViewById(R.id.editText_nachname);
         editId = findViewById(R.id.editText_id);
         btnShowLog = findViewById(R.id.button_log);
-
+        btnDeleteRecords = findViewById(R.id.button_delete);
         viewLog();
         datePicker();
+        deleteRecords();
 
     }
 
@@ -69,6 +72,17 @@ public class AdminActivity extends AppCompatActivity {
                 }
         );
     }
+    public void deleteRecords() {
+        btnDeleteRecords.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        confirmDelete();
+                    }
+                }
+        );
+    }
+
 
     public void showMsg(String title, String msg) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -77,6 +91,30 @@ public class AdminActivity extends AppCompatActivity {
         builder.setMessage(msg);
         builder.show();
     }
+
+    public void confirmDelete() {
+        String title ="Delete Older Records";
+        String msg = "This will delete all records older than 30 days, there is no going back";
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(AdminActivity.this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(msg);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        builder.setPositiveButton("Delete Records", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String res = myDb.deleteOldRecords();
+                Toast.makeText(AdminActivity.this, res + " Einträge wurden gelöscht", Toast.LENGTH_LONG).show();
+            }});
+        builder.show();
+
+    }
+
 
     public void datePicker(){
         editDate.setOnClickListener(new View.OnClickListener() {
